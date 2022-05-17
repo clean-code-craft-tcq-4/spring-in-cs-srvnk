@@ -5,30 +5,24 @@ namespace Statistics
 {
     public class StatsComputer
     {
-        public Stats CalculateStatistics(List<float> numbers) {
+        //public Stats CalculateStatistics(List<float> numbers) {
+        public float[] CalculateStatistics(List<float> numbers) {
             //Implement statistics here
-            try
+            float[] retData = new Stats();
+
+            if (numbers.Count() == 0)
             {
-                float[] retData = new Stats();
-                
-                if (numbers.Count() == 0)
-                {
-                    retData[0] = Double.NaN;
-                    retData[1] = Double.NaN;
-                    retData[2] = Double.NaN; 
-                }
-                else
-                {
-                    retData[0] = numbers.Average();
-                    retData[1] = numbers.Min();
-                    retData[2] = numbers.Max();
-                }
-                return retData;
+                retData[0] = Double.NaN;
+                retData[1] = Double.NaN;
+                retData[2] = Double.NaN; 
             }
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine("Error in CalculateStatistics. " + ex.Message);
-            }                
+                retData[0] = numbers.Average();
+                retData[1] = numbers.Min();
+                retData[2] = numbers.Max();
+            }
+            return retData;
         }
     }
 }
