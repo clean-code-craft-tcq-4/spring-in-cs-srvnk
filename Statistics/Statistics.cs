@@ -5,10 +5,14 @@ namespace Statistics
 {
     public class StatsComputer
     {
+        public float average {get;set;}
+        public float min {get;set;}
+        public float max {get;set;}
+        
         public Stats CalculateStatistics(List<float> numbers) 
         {
             //Implement statistics here
-            Stats retData = new Stats();           
+            StatsComputer retData = new StatsComputer();           
                         
             if (numbers.Count == 0)
             {
@@ -44,12 +48,5 @@ namespace Statistics
             
             return retData;
         }
-    }
-    
-    public class Stats
-    {
-        public float average {get;set;}
-        public float min {get;set;}
-        public float max {get;set;}
     }
 }
