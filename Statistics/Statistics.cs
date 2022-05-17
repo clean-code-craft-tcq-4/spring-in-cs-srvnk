@@ -12,7 +12,8 @@ namespace Statistics
         public Stats CalculateStatistics(List<float> numbers) 
         {
             //Implement statistics here
-            Stats retData = new Stats();           
+            StatsComputer retData = new StatsComputer();    
+            Stats ret = new Stats();
                         
             if (numbers.Count == 0)
             {
@@ -46,11 +47,11 @@ namespace Statistics
                 retData.max = maxValue;
             }
             
-            this.average = retData.average;
-            this.min = retData.min;
-            this.max = retData.max;
+            ret.average = retData.average;
+            ret.min = retData.min;
+            ret.max = retData.max;
             
-            return retData;
+            return ret;
         }
         
         public class Stats
