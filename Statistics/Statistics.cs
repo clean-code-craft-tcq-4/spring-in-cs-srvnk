@@ -9,19 +9,19 @@ namespace Statistics
             //Implement statistics here
             try
             {
-                Stats retData = new Stats();
+                float[] retData = new Stats();
                 
                 if (numbers.Count() == 0)
                 {
-                    retData.average = Double.NaN;
-                    retData.min = Double.NaN;
-                    retData.max = Double.NaN; 
+                    retData[0] = Double.NaN;
+                    retData[1] = Double.NaN;
+                    retData[2] = Double.NaN; 
                 }
                 else
                 {
-                    retData.average = numbers.Average();
-                    retData.min = numbers.Min();
-                    retData.max = numbers.Max();
+                    retData[0] = numbers.Average();
+                    retData[1] = numbers.Min();
+                    retData[2] = numbers.Max();
                 }
                 return retData;
             }
