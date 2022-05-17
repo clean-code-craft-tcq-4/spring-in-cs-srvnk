@@ -5,24 +5,51 @@ namespace Statistics
 {
     public class StatsComputer
     {
-        //public Stats CalculateStatistics(List<float> numbers) {
-        public float[] CalculateStatistics(List<float> numbers) {
+        public Stats CalculateStatistics(List<float> numbers) 
+        {
             //Implement statistics here
-            float[] retData = new Stats();
-
-            if (numbers.Count() == 0)
+            Stats retData = new Stats();           
+                        
+            if (numbers.Count == 0)
             {
-                retData[0] = Double.NaN;
-                retData[1] = Double.NaN;
-                retData[2] = Double.NaN; 
+                retData.average = (float)Double.NaN;
+                retData.min = (float)Double.NaN;
+                retData.max = (float)Double.NaN; 
             }
             else
             {
-                retData[0] = numbers.Average();
-                retData[1] = numbers.Min();
-                retData[2] = numbers.Max();
+                float minValue = numbers[0];
+                float maxValue = numbers[0];
+                float sum = numbers[0];
+                
+                for (int i=1; i<numbers.Count; i++)
+                {
+                    if(minValue > numbers[i])
+                    {
+                        minValue = numbers[i];
+                    }
+                    
+                    if(maxValue < numbers[i])
+                    {
+                        maxValue = numbers[i];
+                    }
+                    
+                    sum = sum + numbers[i];                    
+                }              
+                
+                retData.average = sum/numbers.Count;
+                retData.min = minValue;
+                retData.max = maxValue;
             }
+            
             return retData;
         }
+    }
+    
+    public class Stats
+    {
+        public float average {get;set;}
+        public float min {get;set;}
+        public float max {get;set;}
     }
 }
