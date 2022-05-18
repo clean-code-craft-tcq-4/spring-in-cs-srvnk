@@ -10,7 +10,7 @@ namespace Statistics
         public float max;
     }
     
-    public class StatsComputer : Stats
+    public class StatsComputer
     {
         
         public Stats CalculateStatistics(List<float> numbers) 
