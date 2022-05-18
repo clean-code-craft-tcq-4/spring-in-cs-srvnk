@@ -25,7 +25,7 @@ namespace Statistics
 
             if (maxValue > threshold)
             {
-                alerter[0].alerter.GetType().GetProperty("emailAlert").SetValue(true, true);
+                alerter[0].alerter.GetType().GetProperty("emailSent").SetValue(true, true);
                 alerter[1].alerter.GetType().GetProperty("ledGlows").SetValue(true, true);
             }
         }
