@@ -3,18 +3,15 @@ using System.Collections.Generic;
 
 namespace Statistics
 {
-    public class StatsComputer
+    public class Stats
     {
-        private float average;
+        public float average;
         public float min;
         public float max;
-
-        public class Stats
-        {
-            public float average { get; set; }
-            public float min { get; set; }
-            public float max { get; set; }
-        }
+    }
+    
+    public class StatsComputer : Stats
+    {
         
         public Stats CalculateStatistics(List<float> numbers) 
         {
