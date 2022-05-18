@@ -13,17 +13,21 @@ namespace Statistics
     public class StatsComputer
     {
         
+        public float average;
+        public float min;
+        public float max;
+        
         public Stats CalculateStatistics(List<float> numbers) 
         {
             //Implement statistics here
-            StatsComputer retData = new StatsComputer();    
+            //StatsComputer retData = new StatsComputer();    
             Stats ret = new Stats();
                         
             if (numbers.Count == 0)
             {
-                retData.average = (float)Double.NaN;
-                retData.min = (float)Double.NaN;
-                retData.max = (float)Double.NaN; 
+                average = (float)Double.NaN;
+                min = (float)Double.NaN;
+                max = (float)Double.NaN; 
             }
             else
             {
@@ -46,14 +50,14 @@ namespace Statistics
                     sum = sum + numbers[i];                    
                 }              
                 
-                retData.average = sum/numbers.Count;
-                retData.min = minValue;
-                retData.max = maxValue;
+                average = sum/numbers.Count;
+                min = minValue;
+                max = maxValue;
             }
             
-            ret.average = retData.average;
-            ret.min = retData.min;
-            ret.max = retData.max;
+            ret.average = average;
+            ret.min = min;
+            ret.max = max;
             
             return ret;
         }
