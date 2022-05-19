@@ -12,7 +12,7 @@ namespace Statistics.Test
         {
             var statsComputer = new StatsComputer();
             var computedStats = statsComputer.CalculateStatistics(
-                new List<float>{1.5, 8.9, 3.2, 4.5});
+                new List<float>{(float)1.5, (float)8.9, (float)3.2, (float)4.5});
             float epsilon = 0.001F;
             Assert.True(Math.Abs(statsComputer.average - 4.525) <= epsilon);
             Assert.True(Math.Abs(statsComputer.max - 8.9) <= epsilon);
@@ -37,7 +37,7 @@ namespace Statistics.Test
 
             const float maxThreshold = 10.2;
             var statsAlerter = new StatsAlerter(maxThreshold, alerters);
-            statsAlerter.checkAndAlert(new List<float>{0.2, 11.9, 4.3, 8.5});
+            statsAlerter.checkAndAlert(new List<float>{(float)0.2, (float)11.9, (float)4.3, (float)8.5});
 
             Assert.True(emailAlert.emailSent);
             Assert.True(ledAlert.ledGlows);
