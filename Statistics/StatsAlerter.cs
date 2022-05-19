@@ -8,9 +8,11 @@ namespace Statistics
         public IAlerter[] alerter;
         public StatsAlerter(float threshold, IAlerter[] alerter)
         {
-           this.threshold = threshold;
-           this.alerter = alerter;
+            this.threshold = threshold;
+            this.alerter = alerter;
+
         }
+        
 
         public void checkAndAlert(List<float> nums)
         {
@@ -25,8 +27,8 @@ namespace Statistics
 
             if (maxValue > threshold)
             {
-                alerter[0].alerter.GetType().GetProperty("emailSent").SetValue(true, true);
-                alerter[1].alerter.GetType().GetProperty("ledGlows").SetValue(true, true);
+                alerter[0].EmAl();
+                alerter[1].LedAl();                
             }
         }
     }
