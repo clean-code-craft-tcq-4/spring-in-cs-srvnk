@@ -4,12 +4,12 @@ namespace Statistics
     {
         public bool ledGlows = false;
 
-        public void EmAl()
+        public void EmailAlrt()
         {
             
         }
 
-        public void LedAl()
+        public void LedAlrt()
         {
             ledGlows = true;
         }
