@@ -35,7 +35,7 @@ namespace Statistics.Test
             var ledAlert = new LEDAlert();
             IAlerter[] alerters = {emailAlert, ledAlert};
 
-            const float maxThreshold = 10.2;
+            const float maxThreshold = (float)10.2;
             var statsAlerter = new StatsAlerter(maxThreshold, alerters);
             statsAlerter.checkAndAlert(new List<float>{(float)0.2, (float)11.9, (float)4.3, (float)8.5});
 
