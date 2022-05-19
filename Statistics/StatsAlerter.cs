@@ -4,9 +4,9 @@ namespace Statistics
 {
     public class StatsAlerter
     {
-        public float threshold;
+        public double threshold;
         public IAlerter[] alerter;
-        public StatsAlerter(float threshold, IAlerter[] alerter)
+        public StatsAlerter(double threshold, IAlerter[] alerter)
         {
             this.threshold = threshold;
             this.alerter = alerter;
@@ -14,9 +14,9 @@ namespace Statistics
         }
         
 
-        public void checkAndAlert(List<float> nums)
+        public void checkAndAlert(List<double> nums)
         {
-            float maxValue = nums[0];
+            double maxValue = nums[0];
             for (int i = 1; i < nums.Count; i++)
             {
                 if (maxValue < nums[i])
