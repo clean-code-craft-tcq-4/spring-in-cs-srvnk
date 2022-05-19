@@ -4,12 +4,12 @@ namespace Statistics
     {
         public bool emailSent = false;
 
-        public void EmAl()
+        public void EmailAlrt()
         {
             emailSent = true;
         }
 
-        public void LedAl()
+        public void LedAlrt()
         {
             
         }
