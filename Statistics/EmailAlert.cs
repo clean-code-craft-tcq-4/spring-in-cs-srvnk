@@ -1,7 +1,17 @@
 namespace Statistics
 {
-    public class EmailAlert
+    public class EmailAlert: IAlerter
     {
-        public bool emailSent = false;
+        public bool emailAlert = false;
+
+        public void EmAl()
+        {
+            emailAlert = true;
+        }
+
+        public void LedAl()
+        {
+            
+        }
     }
 }
