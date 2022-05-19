@@ -6,13 +6,12 @@ namespace Statistics
     {
         public double threshold;
         public IAlerter[] alerter;
+        
         public StatsAlerter(double threshold, IAlerter[] alerter)
         {
             this.threshold = threshold;
             this.alerter = alerter;
-
-        }
-        
+        }        
 
         public void checkAndAlert(List<double> nums)
         {
@@ -27,8 +26,8 @@ namespace Statistics
 
             if (maxValue > threshold)
             {
-                alerter[0].EmAl();
-                alerter[1].LedAl();                
+                alerter[0].EmailAlrt();
+                alerter[1].LedAlrt();                
             }
         }
     }
