@@ -5,19 +5,19 @@ namespace Statistics
 {
     public class Stats
     {
-        public float average;
-        public float min;
-        public float max;
+        public double average;
+        public double min;
+        public double max;
     }
     
     public class StatsComputer
     {
         
-        public float average;
-        public float min;
-        public float max;
+        public double average;
+        public double min;
+        public double max;
         
-        public Stats CalculateStatistics(List<float> numbers) 
+        public Stats CalculateStatistics(List<double> numbers) 
         {
             //Implement statistics here
             //StatsComputer retData = new StatsComputer();    
@@ -25,15 +25,15 @@ namespace Statistics
                         
             if (numbers.Count == 0)
             {
-                average = (float)Double.NaN;
-                min = (float)Double.NaN;
-                max = (float)Double.NaN; 
+                average = Double.NaN;
+                min = Double.NaN;
+                max = Double.NaN; 
             }
             else
             {
-                float minValue = numbers[0];
-                float maxValue = numbers[0];
-                float sum = numbers[0];
+                double minValue = numbers[0];
+                double maxValue = numbers[0];
+                double sum = numbers[0];
                 
                 for (int i=1; i<numbers.Count; i++)
                 {
